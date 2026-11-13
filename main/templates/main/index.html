@@ -1,0 +1,52 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Home page title{% endblock %}
+
+{% block content %}
+
+<div class="hero dark-bg">
+  <div class="container">
+    <div class="hero__inner">
+      <h2 class="hero-title h1">Our goal is to explain Ukraine, its politics, culture, history.</h2>
+      <p class="hero-subtitle h5">Great success is achieved by those who are not afraid to move forward, even when the path is not easy.</p>
+    </div>
+  </div>
+</div>
+
+<div class="home-articles__slider">
+  <div class="container">
+    <div class="main-news">
+      <h1>History news</h1>
+    </div>
+  </div>
+  <div class="main-news__list">
+    {% if news %}
+      <div data-main-slider class="articles__slider swiper">
+        <button data-btn-prev class="slider__btn-prev"></button>
+        <button data-btn-next class="slider__btn-next"></button>
+        <div class="swiper-wrapper">
+          {% for cat in news %}
+            <div class="swiper-slide">
+              <a href="{% url 'post' cat.id %}" class="article-slide__link">
+                <div class="article-slide" style="background-image: url('{{ cat.cover.url }}');">
+                  <p>{{ cat.title }}</p>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <p>Create cat ..</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="container">
+  <article class="home-content">
+    <p class="h3">Every day, Ukraine resists Russia's full-scale invasion. From the moment Russian troops crossed the Ukrainian border, bringing only pain, death and destruction, Ukrainian lives have not been the same. But we are standing firm against aggression. Our resilience is rooted in the courage of our people, who defend our home and our values with all their hearts.</p>
+    <p class="h3">Visit <a target="_blank" href="war.ukraine.ua">war.ukraine.ua</a> for verified information and stories of Ukrainians in the wartime. Your awareness and support play a vital role in our ongoing fight for freedom and peace.</p>
+  </article>
+</div>
+
+{% endblock %}

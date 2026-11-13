@@ -1,0 +1,17 @@
+
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class="article-hero" style="background-image: url('{{post.cover.url}}');">
+  <div class="container article-hero__inner">
+    <h1 class="article-title">{{post.title}}</h1>
+    <p class="article-excerpt">{{post.excerpt}}</p>
+  </div>
+</div>
+<div class="container">
+  <article class="article">
+    <p>{{post.content|safe}}</p>
+  </article>
+  <p>{{post.date|date:"F j, Y, H:i"}}</p>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+<div class="dark-bg">
+  <div class="container page-blog">
+    <h1>News</h1>
+    <ul class="blog-list">
+      {% if news %}
+      {% for post in news %}
+        <li class="blog-list__item post">
+          <a href="{% url 'post' post.id%}" class="post-link">
+            {% if post.cover %}
+              <div class="post_wrap-img">
+                <img src="{{ post.cover.url }}" alt="{{ post.title }}" />
+              </div>
+            {% endif %}
+            <div class="post_wrap-content">
+              <h3>{{ post.title }}</h3>
+              <p class="post-excerpt">{{ post.excerpt }}</p>
+              <p class="post_date">{{ post.date|date:"F j, Y"}}</p>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+      {% else %}
+      <h3>Any news posts was found !</h3>
+      {% endif %}
+    </ul>
+  </div>
+</div>
+{% endblock %}
