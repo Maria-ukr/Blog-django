@@ -1,0 +1,85 @@
+.about-hero {
+  padding-top: var(--topgap-for-nav);
+  padding-bottom: var(--topgap-for-nav);
+  .about-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr minmax(0px, 30rem);
+    gap: 1rem;
+  }
+}
+
+.about-poster {
+  position: relative;
+  padding: 6rem 0 6rem;
+  min-height: 70dvh;
+  width: 100dvw;
+  background-image: url('../images/books.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: var(--black);
+    opacity: 0.7;
+  }
+  .about-poster__inner {
+    position: relative;
+    z-index: 2;
+  }
+  .about-title {
+      max-width: 66rem;
+      color: var(--accent);
+  }
+}
+
+.about-aside_half {
+  .about-aside__title {
+    padding: 5rem 0;
+    max-width: 60rem;
+  }
+}
+
+.about-context {
+  padding: 4rem 0;
+  .h4 {
+    margin-bottom: 1rem;
+    max-width: 60rem;
+  }
+  .about-context_list {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    li {
+      border-top: 1px solid var(--font-color);
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      .context_list-count {
+        color: var(--red);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .about-hero {
+    .about-hero__inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .about-context {
+    .about-context_list {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+}
