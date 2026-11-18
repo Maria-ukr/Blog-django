@@ -63,7 +63,7 @@ header {
       transition: color .3s linear;
     }
     li:hover {
-      i {
+      i, a {
         color: var(--red);
       }
     }
