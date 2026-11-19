@@ -32,7 +32,7 @@ Open your terminal in the root project folder (`web-django`, where `manage.py` i
 ### Step 1. Clone the repository
 ```bash
 git clone 
-cd web-django
+cd Blog-django
 ```
 
 ### Step 2. Create a virtual environment
