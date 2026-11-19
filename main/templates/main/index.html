@@ -16,19 +16,19 @@
 <div class="home-articles__slider">
   <div class="container">
     <div class="main-news">
-      <h1>History news</h1>
+      <h1>Categories</h1>
     </div>
   </div>
   <div class="main-news__list">
-    {% if news %}
+    {% if categories %}
       <div data-main-slider class="articles__slider swiper">
         <button data-btn-prev class="slider__btn-prev"></button>
         <button data-btn-next class="slider__btn-next"></button>
         <div class="swiper-wrapper">
-          {% for cat in news %}
+          {% for cat in categories %}
             <div class="swiper-slide">
-              <a href="{% url 'post' cat.id %}" class="article-slide__link">
-                <div class="article-slide" style="background-image: url('{{ cat.cover.url }}');">
+              <a href="{% url 'category' cat.id %}" class="article-slide__link">
+                <div class="article-slide"{% if cat.image %} style="background-image: url('{{ cat.image.url }}');"{% endif %}>
                   <p>{{ cat.title }}</p>
                 </div>
               </a>
