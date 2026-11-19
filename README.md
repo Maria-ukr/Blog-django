@@ -1,5 +1,7 @@
 # News & Blog Web Application (Django)
 
+[![Architecture diagram](https://gitdiagram.com/diagram-badge.svg)](https://gitdiagram.com/maria-ukr/blog-django?utm_source=readme&utm_medium=badge)
+
 A full-stack web application built with **Django**, featuring a custom blog/news system, media file management, and a pre-configured Django Admin panel with saved articles and images.
 
 ## Project Structure
